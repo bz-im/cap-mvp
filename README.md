@@ -8,3 +8,8 @@
 
 **Cons:**
 - no centralized place to group or batch manage certain collections or blocks
+
+
+
+# General pros
+## 1. Auto generated payload-types 
