@@ -14,6 +14,10 @@ export const isAdmin: Access<User> = ({ req: { user } }) => {
   return Boolean(user?.roles?.includes('admin'))
 }
 
+export const isAdminOrEditor: Access<User> = ({ req: { user } }) => {
+  // Return true or false based on if the user has an admin role
+  return Boolean(user?.roles?.includes('admin') || user?.roles?.includes('editor'))
+}
 
 /**
  * is access allowed to admin or the user self
