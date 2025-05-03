@@ -1,5 +1,6 @@
-import { isAdmin, isAdminOrEditor } from "@/utils/access-control"
-import type { CollectionConfig } from "payload"
+import { slugField } from '@/fields/slug'
+import { isAdmin, isAdminOrEditor } from '@/utils/access-control'
+import type { CollectionConfig } from 'payload'
 
 export const SimplePages: CollectionConfig = {
   slug: 'simple-pages',
@@ -22,30 +23,32 @@ export const SimplePages: CollectionConfig = {
       type: 'text',
       required: true,
     },
-    {
-      type: 'tabs',
-      tabs: [
-        {
-          fields: [],
-          label: 'Hero',
-        },
-        {
-          fields: [
-            {
-              name: 'layout',
-              type: 'blocks',
-              blocks: [],
-              required: true,
-              admin: {
-                initCollapsed: true,
-              },
-            },
-          ],
-          label: 'Content',
-        },
-        
-      ],
-    },
+    ...slugField('title'),
+
+    // {
+    //   type: 'tabs',
+    //   tabs: [
+    //     {
+    //       fields: [],
+    //       label: 'Hero',
+    //     },
+    //     {
+    //       fields: [
+    //         {
+    //           name: 'layout',
+    //           type: 'blocks',
+    //           blocks: [],
+    //           required: true,
+    //           admin: {
+    //             initCollapsed: true,
+    //           },
+    //         },
+    //       ],
+    //       label: 'Content',
+    //     },
+
+    //   ],
+    // },
     {
       name: 'publishedAt',
       type: 'date',
