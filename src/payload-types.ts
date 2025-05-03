@@ -49,6 +49,7 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: string;
+  roles:string[]
   updatedAt: string;
   createdAt: string;
   email: string;

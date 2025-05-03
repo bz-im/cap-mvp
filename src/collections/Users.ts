@@ -1,3 +1,4 @@
+import { isAdmin, isAdminOrSelf, isAdminFieldLevel } from '@/utils/access-control';
 import type { CollectionConfig } from 'payload';
 
 export const Users: CollectionConfig = {
