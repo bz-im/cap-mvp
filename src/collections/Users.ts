@@ -41,6 +41,7 @@ export const Users: CollectionConfig = {
     },
     {
       name: 'roles',
+      required:true,
       // Save this field to JWT so we can use from `req.user`
       saveToJWT: true,
       type: 'select',
