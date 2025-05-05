@@ -1,4 +1,4 @@
-import { slugField } from '@/fields/slug'
+import { slugField } from '@/fields/slug/slug'
 import { isAdmin, isAdminOrEditor } from '@/utils/access-control'
 import type { CollectionConfig } from 'payload'
 

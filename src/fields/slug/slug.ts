@@ -38,15 +38,16 @@ export const slugField: Slug = (fieldToUse = 'title', overrides = {}) => {
       admin: {
         position: 'sidebar',
         ...(slugOverrides?.admin || {}),
-        // components: {
-        //   Field: {
-        //     path: '@/cms-components/SlugField',
-        //     clientProps: {
-        //       fieldToUse,
-        //       checkboxFieldPath: checkBoxField.name,
-        //     },
-        //   },
-        // },
+        // swap in our own slug field
+        components: {
+          Field: { // the form field rendered in Edit view
+            path: '@/fields/slug/SlugComponent#SlugComponent',
+            clientProps: {
+              fieldToUse,
+              checkboxFieldPath: checkBoxField.name,
+            },
+          },
+        },
       },
     }
 
