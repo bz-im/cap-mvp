@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 
 import type { SimplePage } from '@/payload-types'
 
-import { HeroBlock } from '@/blocks/HeroBlock'
+import { HeroBlockComponent } from '@/blocks/Hero'
 
 const blockComponents = {
-  hero: HeroBlock,
+  hero: HeroBlockComponent,
 }
 
 export const RenderBlocks: React.FC<{
@@ -33,6 +33,9 @@ export const RenderBlocks: React.FC<{
               )
             }
           }
+          {
+            return 'No block found'
+          }
           return null
         })}
       </Fragment>
@@ -41,3 +44,5 @@ export const RenderBlocks: React.FC<{
 
   return null
 }
+
+export default RenderBlocks

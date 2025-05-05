@@ -1,6 +1,6 @@
 import type { Block } from 'payload'
 
-export const HeroBlock: Block = {
+export const heroBlock: Block = {
   slug: 'hero',
   labels: {
     singular: 'Hero',

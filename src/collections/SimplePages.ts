@@ -1,4 +1,4 @@
-import { HeroBlock } from '@/blocks/HeroBlock'
+import { heroBlock } from '@/blocks/Hero/heroConfig'
 import { slugField } from '@/fields/slug/slug'
 import { isAdmin, isAdminOrEditor } from '@/utils/access-control'
 import type { CollectionConfig } from 'payload'
@@ -29,7 +29,7 @@ export const SimplePages: CollectionConfig = {
     {
       name: 'layout',
       type: 'blocks',
-      blocks: [HeroBlock],
+      blocks: [heroBlock],
       required: true,
       admin: {
         initCollapsed: true,
