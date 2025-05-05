@@ -1,3 +1,4 @@
+import { HeroBlock } from '@/blocks/HeroBlock'
 import { slugField } from '@/fields/slug/slug'
 import { isAdmin, isAdminOrEditor } from '@/utils/access-control'
 import type { CollectionConfig } from 'payload'
@@ -25,30 +26,16 @@ export const SimplePages: CollectionConfig = {
     },
     ...slugField('title'),
 
-    // {
-    //   type: 'tabs',
-    //   tabs: [
-    //     {
-    //       fields: [],
-    //       label: 'Hero',
-    //     },
-    //     {
-    //       fields: [
-    //         {
-    //           name: 'layout',
-    //           type: 'blocks',
-    //           blocks: [],
-    //           required: true,
-    //           admin: {
-    //             initCollapsed: true,
-    //           },
-    //         },
-    //       ],
-    //       label: 'Content',
-    //     },
+    {
+      name: 'layout',
+      type: 'blocks',
+      blocks: [HeroBlock],
+      required: true,
+      admin: {
+        initCollapsed: true,
+      },
+    },
 
-    //   ],
-    // },
     {
       name: 'publishedAt',
       type: 'date',
