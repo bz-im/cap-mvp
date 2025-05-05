@@ -171,6 +171,24 @@ export interface SimplePage {
   title: string;
   slug?: string | null;
   slugLock?: boolean | null;
+  layout: {
+    heading: string;
+    subheading?: string | null;
+    description?: string | null;
+    backgroundImage?: (number | null) | Media;
+    ctaButtons?:
+      | {
+          label: string;
+          link: string;
+          variant?: ('primary' | 'secondary' | 'text') | null;
+          id?: string | null;
+        }[]
+      | null;
+    alignment?: ('left' | 'center' | 'right') | null;
+    id?: string | null;
+    blockName?: string | null;
+    blockType: 'hero';
+  }[];
   publishedAt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -377,6 +395,29 @@ export interface SimplePagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   slugLock?: T;
+  layout?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              heading?: T;
+              subheading?: T;
+              description?: T;
+              backgroundImage?: T;
+              ctaButtons?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    variant?: T;
+                    id?: T;
+                  };
+              alignment?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
   publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
